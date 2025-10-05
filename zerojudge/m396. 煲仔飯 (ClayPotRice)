@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//t:午休時長,g:去程時長,w:等待時間,e:吃飯時間,b:回程時長
+int t,g,w,e,b,s;
+int main(){
+    cin >> t >> g >> w >> e >> b;
+    s = g+w+e+b;
+    if (t >= s){
+        cout << s;
+    }
+    else{
+        cout << -1;
+    }
+    return 0;
+}
