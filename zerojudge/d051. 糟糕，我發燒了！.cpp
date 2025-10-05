@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//f:地ん放
+//f:碌脴陇贸路脜芦脳
 int f;
 int main(){
     cin >> f;
