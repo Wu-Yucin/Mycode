@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//a:整數a,b:整數b,ans:答案(只有0和1),x:判斷變數
+int a,b,ans,x;
+int main(){
+    cin >> a >> b >> ans;
+
+    if (a!=0){a=1;}
+    if(b!=0){b=1;}
+    //AND
+    if ( (a && b) == ans ){
+            cout << "AND" ;
+            x += 1;
+    }
+    //OR
+    if ( (a || b) == ans ){
+            cout << "OR" ;
+            x += 1;
+    }
+    //XOR
+    if ( (a != b) == ans ) {
+            cout << "XOR" ;
+            x +=1;
+    }
+    //IMPOSSIBLE
+    if (x == 0){
+        cout << "IMPOSSIBLE";
+    }
+    return 0;
+}
