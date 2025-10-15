@@ -8,24 +8,29 @@ int main(){
 
     if (a!=0){a=1;}
     if(b!=0){b=1;}
+    
     //AND
     if ( (a && b) == ans ){
-            cout << "AND" ;
-            x += 1;
+        cout << "AND\n" ;
+        x += 1;
     }
     //OR
     if ( (a || b) == ans ){
-            cout << "OR" ;
-            x += 1;
+        cout << "OR\n" ;
+        x += 1;
     }
     //XOR
-    if ( (a != b) == ans ) {
-            cout << "XOR" ;
-            x +=1;
+    if ( (a != b) && (ans==1)) {
+        cout << "XOR\n" ;
+        x +=1;
+    }
+    else if ((a==b) && (ans==0)){
+        cout << "XOR\n" ;
+        x +=1;
     }
     //IMPOSSIBLE
     if (x == 0){
-        cout << "IMPOSSIBLE";
+        cout << "IMPOSSIBLE\n";
     }
     return 0;
 }
