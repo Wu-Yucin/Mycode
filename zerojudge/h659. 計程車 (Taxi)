@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//k:總公里數,w:車輛延滯時間,s:上車時間,e:下車時間
+int k,w,s,e;
+int main(){
+    
+    return 0;
+}
