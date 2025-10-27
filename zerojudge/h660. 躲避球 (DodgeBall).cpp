@@ -8,7 +8,7 @@ int main(){
     cin >> n;
     for (int i=1;i<=n;++i){
         cin >> p >> s;
-        if ((p-x)<=10 || (x-p)<=10){
+        if ((p-x)<=r && (p-x)>=-r){
             if (s <= v){
                 x = p;
             }
