@@ -6,21 +6,30 @@ int n;
 bool is_prime=true;
 int main(){
     cin >> n;
-    for(int i=n ; i>0 ; ++i){
-        if (%i == 0){
-            cout << i;
+    for(int i=n+1 ; ; ++i){
+        is_prime=true;
+        for (int j=2 ; j<=sqrt(i) ; ++j){
+            if ( i%j == 0){
+                is_prime = false;
+                break;
+            }
+        }
+        if (is_prime && i!=1){
+            cout << i << " ";
             break;
         }
     }
-    for (int j=n ; j>0 ; ++j){
-        if (sqrt(j) = int){
-            cout << j;
+   for (int q = n + 1;; ++q) {
+        int root = sqrt(q);
+        if (root * root == q) {
+            cout << q << " ";
             break;
         }
     }
-    for (int w=n ; w>0 ; ++w){
-        if (sqrt(sqrt(w)) = int){
-            cout << w;
+    for (int w = n + 1;; ++w) {
+        int cube = cbrt(w);
+        if (cube * cube * cube == w) {
+            cout << w << endl;
             break;
         }
     }
