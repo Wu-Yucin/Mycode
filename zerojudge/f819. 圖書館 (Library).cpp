@@ -11,7 +11,7 @@ int main(){
         if (d>100){
             book[f]=s;
             f++;
-            money=(d-100)*5;
+            money+=(d-100)*5;
         }
     }
     for (int i=0;i<f;++i){
