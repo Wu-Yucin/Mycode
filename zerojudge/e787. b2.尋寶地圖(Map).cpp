@@ -3,49 +3,38 @@ using namespace std;
 
 ///n:列,m:行,Map:藏寶圖,Map_t:轉換圖
 int main(){
-    int n,m,Map[100][100],Map_t[100][100];
-    cin >> n >> m;
-    for (int i=0;i<n;++i){
-        for (int j=0;j<m;++j){
+    int N, M,Map[100][100],Map_t[100][100];
+    cin >> N >> M;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
             cin >> Map[i][j];
         }
     }
-    for (int i=0;i<n;++i){
-        for (int j=0;j<m;++j){
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
             cin >> Map_t[i][j];
         }
     }
-    int sum=0;
-    for (int i=0;i<n;++i){
-        for (int j=0;j<m;++j){
-            sum+=Map_t[i][j];
+    int row[100] = {0},col[100] = {0};
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            row[i] += Map_t[i][j];
         }
-        if (sum%2 != 0){
-            for (int j=0;j<m;++j){
-                if(Map[i][j]==1){
-                    Map[i][j]=0;
-                }
-                else Map[i][j]=1;
+    }
+    for (int j = 0; j < M; j++) {
+        for (int i = 0; i < N; i++) {
+            col[j] += Map_t[i][j];
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            if ( (row[i] + col[j] - Map_t[i][j]) % 2 == 1 ) {
+                Map[i][j] = 1 - Map[i][j];
             }
         }
-        sum=0;
     }
-    for (int j=0;j<m;++j){
-        for (int i=0;i<n;++i){
-            sum+=Map_t[i][j];
-        }
-        if (sum%2 != 0){
-            for (int i=0;i<n;++i){
-                if(Map[i][j]==1){
-                    Map[i][j]=0;
-                }
-                else Map[i][j]=1;
-            }
-        }
-        sum=0;
-    }
-    for (int i=0;i<n;++i){
-        for (int j=0;j<m;++j){
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
             cout << Map[i][j] << " ";
         }
         cout << endl;
