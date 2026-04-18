@@ -1,31 +1,35 @@
 #include<iostream>
 using namespace std;
 
-///n:幾個測資,a:三邊長,m:max
-int main(){
-    int n;
-    string a;
-    cin >> n;
-    for (int i=0;i<n;++i){
-        string m="";
-        for (int j=0;j<3;++j){
-            cin >> a;
-            if (a.size() > m.size()){
-                m=a;
+string math(string x,string m){
+    if (x.size() > m.size()){
+        m=x;
+    }
+    else if (x.size() == m.size()){
+        for (int i=0;i<x.size();++i){
+            if (x[i]>m[i]){
+                m=x;
+                break;
             }
-            else if (a.size() == m.size()){
-                for (int z=0;z<a.size();++z){
-                    if (a[z]>m[z]){
-                        m=a;
-                        break;
-                    }
-                    else if (a[z]<m[z]){
-                        break;
-                    }
-                }
+            else if (x[i]<m[i]){
+                break;
             }
         }
-        cout << m << endl;
+    }
+    return m;
+}
+
+int main(){
+    int n;
+    string a,b,c;
+    cin >> n;
+    for (int i=0;i<n;++i){
+        cin >> a >> b >> c;
+        string mx="";
+        mx=math(a,mx);
+        mx=math(b,mx);
+        mx=math(c,mx);
+        cout << mx << endl;
     }
     return 0;
 }
